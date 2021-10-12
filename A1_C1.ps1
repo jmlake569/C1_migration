@@ -28,7 +28,7 @@ try {
   write-warning "Start-Process encounter error: $_"
   Return # script failed
 }
-if ($? -eq 0) {
+if ($LastExitCode -eq 0) {
     Write-Host "SCUT Succeeded - Forcing Restart" -ForegroundColor Green
     Restart-Computer -Force
 }else {
