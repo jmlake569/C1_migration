@@ -25,8 +25,6 @@ try {
     $p.ExitCode
  
 }catch { 
-  # oops remove-item failed. Write warning then quit 
-  # replace the following with what you want to do
   write-warning "Start-Process encounter error: $_"
   Return # script failed
 }
@@ -49,4 +47,4 @@ if ($cloudOneExists -eq $false -and $apexExists -eq $false) {
     Write-Host "Starting Cloud One Agent Install" -ForegroundColor Blue
     Invoke-Expression ".\C1_install.ps1"
 }
-Stop-Transcript 
+Stop-Transcript
