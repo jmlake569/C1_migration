@@ -9,3 +9,4 @@
 8. WORKFLOW: Run script once, removes apex and restarts. Run script again after restart and it will install Cloud One. You can't break anything with this because it's already programmed to handle any situation on its own.
 9. Line 24 contains the SCUT.exe that is being called it should always be called this even with your own copy, but in case the name changes please make sure they match here.
 10. Line 47 is is the name of your Cloud One script to be ran. Please re-name your script like the one shown here "C1_install.ps1" or change the name here to the name of your Cloud One deployment script.
+The script automatically dumps the log file into the directory its running out of in case of errors.
