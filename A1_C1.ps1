@@ -23,21 +23,14 @@ try {
     $p = Start-Process ".\SCUT.exe" -ArgumentList $arguments -wait -NoNewWindow -PassThru
     $p.HasExited
     $p.ExitCode
-
- if ($LastExitCode -eq 0) {
-    Write-Host "SCUT Succeeded - Forcing Restart" -ForegroundColor Green
-    Restart-Computer -Force
-}else {
-    Write-Warning "SCUT Failed - Please Check Error logs"
-    }
+ 
 }catch { 
-  # oops remove-item failed. Write warning then quit 
-  # replace the following with what you want to do
   write-warning "Start-Process encounter error: $_"
   Return # script failed
 }
-if ($LastExitCode -eq 0) {
+if ($? -eq 0) {
     Write-Host "SCUT Succeeded - Forcing Restart" -ForegroundColor Green
+    Restart-Computer -Force
 }else {
     Write-Warning "SCUT Failed - Please Check Error logs"
     }
