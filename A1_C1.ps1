@@ -19,7 +19,7 @@ Write-Warning "Insufficient permissions to run this script. Open the PowerShell 
 break
 }
 
-if ($apexExists -eq $True){
+if ($apexExists -eq $true){
     Write-Host "Removing Apex One" -ForegroundColor Green
     $p = Start-Process ".\SCUT.exe" -ArgumentList $arguments -wait -NoNewWindow -PassThru
     $p.HasExited
