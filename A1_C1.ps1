@@ -35,14 +35,14 @@ if ($? -eq 0) {
     Write-Warning "SCUT Failed - Please Check Error logs"
     }
 }
-#If Cloud One is already installed it will give warning then close the script
+#if Cloud One is already installed it will give warning then close the script
 if ($cloudOneExists -eq $true) {
     Write-Warning "Cloud One Is Already Installed" -ForegroundColor Red
     Start-Sleep -Seconds 3
     Write-Host "Exiting..." -ForegroundColor Red
     Start-Sleep -Seconds 1
 }
-#If CloudOne doesn't exist it will begin the install using the script provided in the same directory as this script - no restart is required for Cloud One agents 20+
+#if CloudOne doesn't exist it will begin the install using the script provided in the same directory as this script - no restart is required for Cloud One agents 20+
 if ($cloudOneExists -eq $false -and $apexExists -eq $false) {
     Write-Host "Starting Cloud One Agent Install" -ForegroundColor Blue
     Invoke-Expression ".\C1_install.ps1"
